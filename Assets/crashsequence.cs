@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class crashsequence : MonoBehaviour
 {
+    public GameObject Intro;
     public bippyScript BS;
     public TransparentWindow tw;
     public GameObject Bippy;
@@ -21,6 +22,7 @@ public class crashsequence : MonoBehaviour
     {
         Bippy.SetActive(true);
         BS.BippySay("Hi there, I'm Bippy! Bippy the Robo-Buddy!", 0);
+        Intro.SetActive(true);
         Destroy(gameObject);
     }
 }
