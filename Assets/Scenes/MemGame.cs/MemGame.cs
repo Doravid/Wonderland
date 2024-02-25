@@ -25,7 +25,7 @@ public class MemGame : MonoBehaviour
         numButtons = 0;
         maxButtons = 1;
         currentTimer = 1;
-        timer = 2;
+        timer = 3;
         createGameturn(maxButtons);
     }
     public void startCaptcha()
@@ -41,12 +41,6 @@ public class MemGame : MonoBehaviour
         if (numButtons >= maxButtons)
         {
             running = false;
-        }
-
-        if (Input.GetKeyDown(KeyCode.F9))
-        {
-            hasStarted = true;
-            running = true;
         }
 
         if (!hasStarted) { return; }
@@ -107,7 +101,6 @@ public class MemGame : MonoBehaviour
         else
         {
             child.SetActive(false);
-            //CODE HERE
             StackSequence.SetActive(true);
         }
     }

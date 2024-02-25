@@ -8,7 +8,8 @@ public class securetysequence : MonoBehaviour
 
     public void One()
     {
-        BS.BippySay("You failed the seccond caption?! How?? that was so easy!", 1);
+        BS.BippySay("You failed the seccond captcha?! How?? that was so easy!", 1);
+        
     }
 
     public void Two()
