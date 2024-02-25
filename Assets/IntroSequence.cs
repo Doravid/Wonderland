@@ -24,6 +24,7 @@ public class IntroSequence : MonoBehaviour
     public void StartCaptcha()
     {
         tw.WindowsMessage("Start the captcha.", "Prompt", 0);
-        //Start captcha here
+        GameObject.Find("Captcha").GetComponent<MemGame>().startCaptcha();
+        Destroy(gameObject);
     }
 }
