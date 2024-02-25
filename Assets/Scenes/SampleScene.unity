@@ -438,6 +438,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 268feef842c6dfa47adbaeecf2e456ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Intro: {fileID: 1352582211}
   BS: {fileID: 82705934}
   tw: {fileID: 519420033}
   Bippy: {fileID: 82705930}
@@ -468,14 +469,14 @@ RectTransform:
   m_GameObject: {fileID: 352276157}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.2542248, y: 1.5547163, z: 1.1945}
+  m_LocalScale: {x: 0.8962018, y: 1.110917, z: 0.85352564}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 227167002}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 521, y: 279}
   m_SizeDelta: {x: 602.693, y: 292.06604}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &352276159
@@ -636,7 +637,7 @@ VideoPlayer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 422213965}
   m_Enabled: 1
-  m_VideoClip: {fileID: 32900000, guid: 941c288b2daee884ebd9eb93d39fd192, type: 3}
+  m_VideoClip: {fileID: 32900000, guid: b7a3760c91d69cd4996ddf05acd1cd6f, type: 3}
   m_TargetCameraAlpha: 1
   m_TargetCamera3DLayout: 0
   m_TargetCamera: {fileID: 519420031}

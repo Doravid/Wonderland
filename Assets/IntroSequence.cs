@@ -5,6 +5,11 @@ using UnityEngine;
 public class IntroSequence : MonoBehaviour
 {
     public bippyScript BS;
+
+    public void NegativeOne()
+    {
+        BS.BippySay("Hi there, I'm Bippy! Bippy the Robo-Buddy!", 0);
+    }
     public void One()
     {
         BS.BippySay("I am your new A.I assistant, I can help you with anything you need on windows!", 3);
