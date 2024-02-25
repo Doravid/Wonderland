@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class IntroSequence : MonoBehaviour
 {
+    public TransparentWindow tw;
     public bippyScript BS;
 
     public void NegativeOne()
@@ -22,6 +23,7 @@ public class IntroSequence : MonoBehaviour
 
     public void StartCaptcha()
     {
-        //start it here
+        tw.WindowsMessage("Start the captcha.", "Prompt", 0);
+        //Start captcha here
     }
 }
