@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class MemGame : MonoBehaviour
 {
+    public GameObject StackSequence;
     public GameObject yellowButton, redButton, greenButton, blueButton, child;
     public List<GameObject> buttons = new List<GameObject>();
     [SerializeField]
@@ -105,7 +106,9 @@ public class MemGame : MonoBehaviour
         }
         else
         {
-            //Random Code
+            child.SetActive(false);
+            //CODE HERE
+            StackSequence.SetActive(true);
         }
     }
 }
