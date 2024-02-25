@@ -2,33 +2,64 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System.IO;
+using UnityEngine.Video;
 
 public class FileAccess : MonoBehaviour
 {
+    public GameObject rickRoll, jumpScareVideo;
+    private bool rickRolled = false;
+    private float rickrollTimer = 8f;
+
+    private bool endingStarted = false;
+    private float jumpscareTimer = 7.5f;
+    private float endingTimer = 4f;
+    private bool finalEnd = false;
+    private bool hasSpammedError = false;
     private string spaceA = "\u0020";
+
+
     // Update is called once per frame
     void Update()
     {
-        string witnessReport = "Witness" + spaceA + "Report.txt";
-        string chemistryAnalysis = "Chemistry" + spaceA + "Analysis.txt";
-        string suspectList = "Suspect" + spaceA + "List.txt";
-        string sceneLog = "Scene" + spaceA + "Log.txt";
-        string fingerprintRecords = "Fingerprint" + spaceA + "Records.txt";
-        string culprit = "Culprit" + spaceA + ".txt";
-        //Check Witness Report
-        if (File.Exists(@System.Environment.GetEnvironmentVariable("USERPROFILE") + @"\Desktop\Investigation\" + witnessReport)) 
+        if (rickRolled) 
+            rickrollTimer -= Time.deltaTime;
+        
+        if (endingStarted)
         {
-            Debug.Log(witnessReport + " Exists");
+            jumpscareTimer -= Time.deltaTime;
         }
-        //Check Chemistry
-        if (File.Exists(@System.Environment.GetEnvironmentVariable("USERPROFILE") + @"\Desktop\Investigation\" + chemistryAnalysis))
+        if (finalEnd)
         {
-            Debug.Log(chemistryAnalysis + " Exists");
+            endingTimer -= Time.deltaTime;
         }
+        if(endingTimer <= 0)
+        {
+            Application.Quit();
+        }
+        if (rickrollTimer <= 0 &&  rickRoll.activeSelf)
+        {
+            Debug.Log("Deactivate");
+            rickRoll.SetActive(false);
+        }
+        if(jumpscareTimer <= 0 && !jumpScareVideo.activeSelf)
+        {
+            jumpScareVideo.SetActive(true);
+            GetComponent<TransparentWindow>().WindowsMessage("WARNING", "its too late", 0);
+            finalEnd = true;
+        }
+        if (Input.GetKeyDown(KeyCode.F6))
+        {
+            spamErorrs();
+        }
+    string suspectList = "Suspect_List.txt";
+    string sceneLog = "Scene_Log.txt";
+    string fingerprintRecords = "Fingerprint_Records.txt";
+    string culprit = "Culprit_.txt";
         //Check Suspect List
-        if (File.Exists(@System.Environment.GetEnvironmentVariable("USERPROFILE") + @"\Desktop\Investigation\" + suspectList))
+        if (File.Exists(@System.Environment.GetEnvironmentVariable("USERPROFILE") + @"\Desktop\Investigation\" + suspectList) && !hasSpammedError)
         {
-            Debug.Log(suspectList + " Exists");
+            hasSpammedError = true;
+            spamErorrs();
         }
         //Check Scene Log
         if (File.Exists(@System.Environment.GetEnvironmentVariable("USERPROFILE") + @"\Desktop\Investigation\" + sceneLog))
@@ -36,20 +67,35 @@ public class FileAccess : MonoBehaviour
             Debug.Log(sceneLog + " Exists");
         }
         //Check Fingerprint Records
-        if (File.Exists(@System.Environment.GetEnvironmentVariable("USERPROFILE") + @"\Desktop\Investigation\" + fingerprintRecords))
+        if (!rickRolled && File.Exists(@System.Environment.GetEnvironmentVariable("USERPROFILE") + @"\Desktop\Investigation\" + fingerprintRecords))
         {
-            Debug.Log(fingerprintRecords + " Exists");
+            rickRolled = true;
+            rickRoll.SetActive(true);
+            rickRoll.GetComponent<VideoPlayer>().Play();
         }   
         //Check Culprit
-        if (File.Exists(@System.Environment.GetEnvironmentVariable("USERPROFILE") + @"\Desktop\Investigation\" + culprit))
+        if (File.Exists(@System.Environment.GetEnvironmentVariable("USERPROFILE") + @"\Desktop\Investigation\" + culprit) && !endingStarted)
         {
-            Debug.Log(culprit + " Exists");
+            jumpScare();
         }
-    }
-        
-        
 
 
 
     }
+    private void jumpScare()
+    {
+        endingStarted = true;
+    }
+
+    private void spamErorrs()
+    {
+        for(int i = 0; i < 9; i++)
+        {
+            GetComponent<TransparentWindow>().WindowsMessage("CAUTION", "CAUTION", 0);
+        }
+        GetComponent<TransparentWindow>().WindowsMessage("caution", "bippy was here", 0);
+    }
+
+
+}
 
