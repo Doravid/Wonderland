@@ -17,12 +17,12 @@ public class stacksequence : MonoBehaviour
 
     public void Two()
     {
-        BS.BippySay("That can only mean one thing...", 2);
+        BS.BippySay("For security, I have encrypted your files.", 2);
     }
 
     public void Three()
     {
-        BS.BippySay("You just need to try again!", 0);
+        BS.BippySay("Complete another captcha to decrypt them!", 0);
     }
 
     public void StartStack()
