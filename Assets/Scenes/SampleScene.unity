@@ -1349,6 +1349,7 @@ GameObject:
   - component: {fileID: 970776232}
   - component: {fileID: 970776231}
   - component: {fileID: 970776235}
+  - component: {fileID: 970776236}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -1448,6 +1449,18 @@ RectTransform:
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
 --- !u!114 &970776235
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 970776230}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2caaddf476261e54e8f596fdff26c571, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &970776236
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1806,6 +1819,7 @@ GameObject:
   - component: {fileID: 1088348098}
   - component: {fileID: 1088348100}
   - component: {fileID: 1088348099}
+  - component: {fileID: 1088348101}
   m_Layer: 5
   m_Name: Stack Sequence
   m_TagString: Untagged
@@ -1869,6 +1883,18 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &1088348101
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1088348097}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2caaddf476261e54e8f596fdff26c571, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1134827363
 GameObject:
   m_ObjectHideFlags: 0
@@ -3200,7 +3226,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &6835564929524364122
 GameObject:
   m_ObjectHideFlags: 0
